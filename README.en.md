@@ -7,15 +7,6 @@ This is a simple demo showcasing the integration of Text-to-Speech (TTS-1), Whis
 ### Modifying Models
 To change the models used, navigate to the `inc.php` file and modify the `chat` function.
 
-```php
-// Modify the chat function in inc.php
-function chat($input) {
-    // Your custom logic to interact with different models
-    // ...
-    return $output;
-}
-```
-
 ### Frontend Frameworks
 The frontend is built using `Bootstrap`, `Vue 2`, and the `Recorder` library.
 

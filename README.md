@@ -1,3 +1,5 @@
+[English README](README.en.md)
+
 一个简单的demo，使用tts-1，whisper，与gpt3.5-turbo聊天！
 
 修改模型可以在`inc.php`的`chat`函数修改
