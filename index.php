@@ -110,6 +110,7 @@
                     this.saveUserConfig();
                 },
                 language(newLanguage) {
+                    this.recognition.lang = newLanguage; // 设置语言，可以根据需要更改
                     this.saveUserConfig();
                 },
                 voice(newVoice) {
@@ -128,7 +129,7 @@
                 startRecording() {
                     this.cur = 'start';
                     if (this.type == 1) {
-                        this.recognition.lang = this.language; // 设置语言，可以根据需要更改
+                        this.recognitionText = "";
                         this.recognition.start();
                     } else {
                         this.rec.start();
