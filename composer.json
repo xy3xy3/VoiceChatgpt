@@ -1,0 +1,13 @@
+{
+    "require": {
+        "orhanerday/open-ai": "^4.9",
+        "symfony/http-client": "^6.3",
+        "nyholm/psr7": "^1.8",
+        "millionmile/get_env": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
