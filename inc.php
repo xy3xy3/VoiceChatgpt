@@ -27,6 +27,9 @@ function audioTotext($c_file)
         "file" => $c_file,
     ]);
     $d = json_decode($result, true);
+    // if (!isset($d["text"])) {
+    //     print_r($result);
+    // }
     return isset($d["text"]) ? $d["text"] : null;
 }
 function speech($text, $voice)

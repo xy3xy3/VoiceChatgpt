@@ -102,13 +102,14 @@
                                     // Play audio if code is 0
                                     vm.status = 'play';
                                     let audio = new Audio(response.msg);
-                                    audio.play(); 
+                                    audio.play();
                                     // 在音频播放结束时触发相应的操作
                                     audio.addEventListener('ended', function() {
                                         vm.status = 'finish';
                                         // 在这里可以执行其他你想要的操作
                                     });
                                 } else {
+                                    vm.status = 'finish';
                                     // Show popup if code is not 0
                                     layer.alert(response.msg);
                                 }
