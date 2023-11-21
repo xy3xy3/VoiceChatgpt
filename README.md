@@ -11,3 +11,7 @@
 访问`clean.php`清理缓存文件
 
 需要解除禁用函数`putenv`
+
+# 部署教程
+推荐php8.1
+修改`.env.example`为`.env`，配置内部的openaikey和url（需要使用代理则修改url）

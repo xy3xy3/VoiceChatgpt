@@ -27,7 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['audio'])) {
     $dir = '/audio_result/' . md5($ai_msg) . ".opus";
     $saveDirectory = __DIR__ . $dir;
     file_put_contents($saveDirectory, $audioData);
-    json($dir, 0);
+    json($dir, 0,['ai_msg'=>$ai_msg]);
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['text'])) {
+    // 获取chat对话
+    $ai_msg =  chat($_POST['text']);
+    if (empty($ai_msg)) {
+        json("ai回答失败");
+    }
+    $audioData = speech($ai_msg, $_POST['voice']);
+    if (empty($audioData)) {
+        json("ai回答失败");
+    }
+    //保存.wav到save
+    $dir = '/audio_result/' . md5($ai_msg) . ".opus";
+    $saveDirectory = __DIR__ . $dir;
+    file_put_contents($saveDirectory, $audioData);
+    json($dir, 0,['ai_msg'=>$ai_msg]);
 } else {
-    json("未收到音频文件");
+    json("没收到文件且没有文本");
 }

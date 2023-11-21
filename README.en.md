@@ -1,11 +1,15 @@
-This is a simple demo that utilizes tts-1, whisper, and gpt3.5-turbo for chatting!
+A simple demo using tts-1, whisper, and chatting with gpt3.5-turbo!
 
-To modify the model, you can edit the chat function in inc.php.
+To modify the model, you can edit the `chat` function in `inc.php`.
 
-The frontend is built using bootstrap, vue2, and recorder.
+The frontend is built using `bootstrap`, `vue2`, and `recorder`.
 
-Users can upload mp3 format files to PHP, which then calls tts to generate opus audio to ensure efficiency.
+The frontend uploads `mp3` format files to PHP, which then calls `tts` to obtain `opus` audio to ensure efficiency.
 
-Access clean.php to clean up cache files.
+Access `clean.php` to clean up cache files.
 
-Please note that the putenv function needs to be enabled.
+It is necessary to enable the `putenv` function.
+
+# Deployment Guide
+PHP 8.1 is recommended.
+Rename `.env.example` to `.env` and configure the openaikey and url inside (modify the url if using a proxy).

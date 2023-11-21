@@ -12,9 +12,11 @@ try {
 session_start();
 $open_ai = new OpenAi(Env::get('API_KEY', ''));
 $open_ai->setBaseURL(Env::get('API_URL', ''));
-function json($msg, $code = 1)
+function json($msg, $code = 1, $extra = [])
 {
     $data = ['code' => $code, 'msg' => $msg];
+    //合并extra和data
+    $data = array_merge($data, $extra);
     echo json_encode($data);
     exit();
 }
