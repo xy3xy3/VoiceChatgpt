@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/inc.php'; // remove this line if you use a PHP Framework.
-
+include __DIR__ . '/system/inc.php'; 
 // $act = isset($_GET['act']) ? $_GET['act'] : '';
 // 处理接收的音频文件
 // 接收 POST 请求的原始数据

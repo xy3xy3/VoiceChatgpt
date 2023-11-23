@@ -10,9 +10,12 @@
 
 访问`clean.php`清理缓存文件
 
-需要解除禁用函数`putenv`
+修改模型可以在`/system/inc.php`的`chat`函数修改
 
-修改模型可以在`inc.php`的`chat`函数修改
+# 更新内容
+去除composer依赖，改为内置Openai库，修改自https://github.com/orhanerday/open-ai，加入了tts相关函数
+
+改为自定义简单函数获取`.env`变量
 
 # 部署教程
 
