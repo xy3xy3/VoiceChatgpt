@@ -1,15 +1,21 @@
-A simple demo using tts-1, whisper, and chatting with gpt3.5-turbo!
+# Project Introduction
 
-To modify the model, you can edit the `chat` function in `inc.php`.
+This project is a simple demo that utilizes TTS-1, Whisper, and GPT-3.5-turbo for conversational interactions.
 
-The frontend is built using `bootstrap`, `vue2`, and `recorder`.
+## Technology Stack
 
-The frontend uploads `mp3` format files to PHP, which then calls `tts` to obtain `opus` audio to ensure efficiency.
+- The front end is built using `bootstarp`, `vue2`, and `recorder`.
+- The front end supports selecting browser-based speech-to-text (low latency) or calling OpenAI's Whisper (high accuracy).
+- Users can upload `mp3` format files to PHP and obtain `opus` audio through TTS to ensure efficiency.
+- Accessing `clean.php` allows for the clearing of cache files.
 
-Access `clean.php` to clean up cache files.
+## Modifications and Updates
 
-It is necessary to enable the `putenv` function.
+- Removed Composer dependencies, and instead integrated a modified version of the [OpenAI library](https://github.com/orhanerday/open-ai), incorporating functions related to TTS.
+- Now utilizes a custom simple function to retrieve `.env` variables.
 
 # Deployment Guide
-PHP 8.1 is recommended.
-Rename `.env.example` to `.env` and configure the openaikey and url inside (modify the url if using a proxy).
+
+For optimal performance, it is recommended to use PHP 8.1.
+
+1. Rename `.env.example` to `.env` and configure the OpenAI Key and URL inside it (modify the URL if a proxy is required).
