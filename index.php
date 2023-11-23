@@ -138,7 +138,7 @@ include __DIR__ . '/system/inc.php';
                 startRecording() {
                     this.cur = 'start';
                     if (this.type == 1) {
-                        this.recognitionText = "";
+
                         this.recognition.start();
                     } else {
                         this.rec.start();
@@ -158,6 +158,7 @@ include __DIR__ . '/system/inc.php';
                         let formData = new FormData();
                         formData.append('text', vm.recognitionText); // 提交用户选择的音色
                         formData.append('voice', vm.voice); // 提交用户选择的音色
+                        vm.recognitionText = "";
                         $.ajax({
                             url: '/chat.php',
                             type: 'POST',
@@ -188,7 +189,6 @@ include __DIR__ . '/system/inc.php';
                             },
                             dataType: 'json' // Specify the expected data type as JSON
                         });
-                        vm.recognitionText = "";
                     } else {
                         this.rec.stop(function(blob, duration) {
                             vm.status = 'load';
@@ -230,6 +230,7 @@ include __DIR__ . '/system/inc.php';
                 },
             },
             mounted() {
+                vm = this
                 if (localStorage.getItem('userConfig')) {
                     const userConfig = JSON.parse(localStorage.getItem('userConfig'));
                     this.type = userConfig.type || this.type;
@@ -260,17 +261,13 @@ include __DIR__ . '/system/inc.php';
 
                     // 在识别到结果时触发
                     this.recognition.onresult = function(event) {
-                        let interimTranscript = '';
                         for (let i = event.resultIndex; i < event.results.length; i++) {
                             if (event.results[i].isFinal) {
-                                // 如果是最终结果，将其添加到 recognitionText 中
                                 vm.recognitionText += event.results[i][0].transcript;
                             } else {
-                                // 如果是中间结果，将其添加到 interimTranscript 中
-                                interimTranscript += event.results[i][0].transcript;
+                                vm.recognitionText += event.results[i][0].transcript;
                             }
                         }
-                        // 如果你需要处理中间结果，可以在这里对 interimTranscript 进行操作
                     };
                 } else {
                     alert('浏览器不支持语音识别功能');
