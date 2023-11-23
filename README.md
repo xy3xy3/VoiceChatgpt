@@ -21,3 +21,5 @@
 为了最佳效果，推荐使用 PHP 8.1。
 
 1. `.env.example` 修改为 `.env`，并配置其中的 OpenAI Key 和 URL（如果需要使用代理，则修改 URL）。
+
+2.必须使用https否则无法录音
