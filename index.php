@@ -90,7 +90,7 @@ include __DIR__ . '/system/inc.php';
         </div>
     </div>
     <footer class="fixed-bottom">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             &copy; 2023 xy3 |
             <a class="text-light" href="https://github.com/xy3xy3/VoiceChatgpt" target="_blank">VoiceChatgpt</a>
         </div>
